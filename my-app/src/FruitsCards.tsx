@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function FruitsCards() {
   let fruits = [
     {
@@ -30,6 +32,8 @@ function FruitsCards() {
     },
   ];
 
+  let [count, setCount] = useState(1);
+
   return (
     <div className="row row-cols-1 row-cols-lg-4 row-cols-md-2 g-4 my-2 mx-5">
       {fruits.map((fruit) => {
@@ -49,7 +53,11 @@ function FruitsCards() {
                 <h4 className="card-title fw-bold text-center">
                   {fruit.title}
                 </h4>
-                <p className="text-warning fw-semibold">{fruit.offer}% OFF</p>
+                <div className="d-flex align-items-center">
+                  <p className="text-warning fw-semibold mb-0">
+                    {fruit.offer}% OFF
+                  </p>
+                </div>
 
                 <hr />
 
@@ -61,11 +69,16 @@ function FruitsCards() {
 
                     <h4 className="text-success">₹{offerPrice}/kg</h4>
                   </div>
-
-                  <button className="btn btn-outline-danger fw-semibold">
-                    + Add to Cart
-                  </button>
+                  <div className="d-flex align-items-center gap-2 ms-auto">
+                    <button className="btn btn-outline-danger fw-semibold" onClick={() => setCount(count - 1)}>-</button>
+                    {count}
+                    <button className="btn btn-outline-danger fw-semibold"
+                      onClick={() => setCount(count + 1)}>+</button>
+                  </div>
                 </div>
+                <button className="btn btn-outline-danger fw-semibold w-100">
+                  Order
+                </button>
               </div>
             </div>
           </div>
