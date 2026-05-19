@@ -1,13 +1,13 @@
 // import Courseslist from "./Courseslist";
 // import CoursesObjects from "./CoursesObjects";
 
-import CoursesCards from "./FruitsCards";
+import StudentForm from "./StudentForm";
+
 
 function App() {
   return (
     <div>
-      <h1 className="text-center mt-3 fw-bold text-danger">Fruits</h1>
-      <CoursesCards></CoursesCards>
+      <StudentForm></StudentForm>
     </div>
   );
 }
