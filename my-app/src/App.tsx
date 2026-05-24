@@ -1,18 +1,11 @@
-// import Courseslist from "./Courseslist";
-// import CoursesObjects from "./CoursesObjects";
-// import StudentForm from "./StudentForm";
-
-import EmployeeDirectory from "./EmployeeDirectory";
-// import Props from "./Props";
+import ProductCatalogue from "./Productcatalogue";
 
 function App() {
-  return (
+   return (
     <div>
-            <h1 className="m-3 text-center fw-bold">Employees App</h1>
-            <hr className="w-75 mx-auto"/>
-      <EmployeeDirectory></EmployeeDirectory>
+      <ProductCatalogue />
     </div>
-  );
+  )
 }
 
 export default App;
