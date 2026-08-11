@@ -1,4 +1,4 @@
-import PostsList from "./Post";
+import PostTable from "./PostTable";
 
 function App() {
   return (
@@ -6,7 +6,7 @@ function App() {
       <h1 className="text-danger text-center my-4 fw-bold">
         Fetch Posts from JSONPlaceholder API
       </h1>
-      <PostsList></PostsList>
+      <PostTable></PostTable>
     </div>
   );
 }
