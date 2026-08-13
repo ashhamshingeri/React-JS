@@ -1,12 +1,10 @@
-import PostTable from "./PostTable";
+import RecipeList from "./RecipeList";
 
 function App() {
   return (
     <div className="container">
-      <h1 className="text-danger text-center my-4 fw-bold">
-        Fetch Posts from JSONPlaceholder API
-      </h1>
-      <PostTable></PostTable>
+      <h1 className="text-success text-center my-4 fw-bold">Recipe List</h1>
+      <RecipeList></RecipeList>
     </div>
   );
 }
