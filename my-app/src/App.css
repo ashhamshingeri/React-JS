@@ -1,0 +1,11 @@
+.app {
+    min-height: 100vh;
+    padding: 50px;
+
+    background: linear-gradient(135deg,
+            #3f442b 0%,
+            #2a2923 30%,
+            #1b1513 55%,
+            #241311 75%,
+            #0b0d0d 100%);
+}

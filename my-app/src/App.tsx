@@ -1,10 +1,9 @@
-import RecipeList from "./RecipeList";
+import AddRecipe from "./AddRecipe";
 
 function App() {
   return (
-    <div className="container">
-      <h1 className="text-success text-center my-4 fw-bold">Recipe List</h1>
-      <RecipeList></RecipeList>
+    <div className="app">
+      <AddRecipe />
     </div>
   );
 }
