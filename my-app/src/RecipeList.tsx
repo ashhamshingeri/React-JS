@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 type Recipes = {
   name: string;
@@ -38,6 +39,7 @@ function RecipeList() {
             <th>Servings</th>
             <th>Cuisine</th>
             <th>Rating</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -50,6 +52,11 @@ function RecipeList() {
               <td>{recipe.servings}</td>
               <td>{recipe.cuisine}</td>
               <td>{recipe.rating}</td>
+              <td>
+                <Link to={`/recipes-edit/${recipe.id}`} className="btn btn-primary">
+                Edit
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>

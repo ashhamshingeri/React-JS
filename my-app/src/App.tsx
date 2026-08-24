@@ -1,10 +1,10 @@
-// import AddRecipe from "./AddRecipe";
-// import RecipeAdd1 from "./RecipeAdd1";
+
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import RecipeList from "./RecipeList";
 import Home from "./Home";
 import About from "./About";
 import AddRecipe from "./AddRecipe";
+import EditRecipe from "./EditRecipe";
 
 function App() {
   return (
@@ -38,7 +38,10 @@ function App() {
             </li>
 
             <li className="nav-item">
-              <Link className="btn btn-success fw-semibold ms-2" to="/recipes-add">
+              <Link
+                className="btn btn-success fw-semibold ms-2"
+                to="/recipes-add"
+              >
                 + Add Recipe
               </Link>
             </li>
@@ -52,6 +55,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/recipes" element={<RecipeList />} />
             <Route path="/recipes-add" element={<AddRecipe />} />
+            <Route path="/recipes-edit/:id" element={<EditRecipe />} />
           </Routes>
         </main>
       </div>
