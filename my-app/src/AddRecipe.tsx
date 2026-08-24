@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./AddRecipe.css";
 
 const API_URL = "https://6a7db151f8b2ed99ca4ea7bf.mockapi.io/Recipes";
 
@@ -9,6 +11,7 @@ function AddRecipe() {
   const [servings, setServings] = useState<string>("");
   const [cuisine, setCuisine] = useState<string>("");
   const [rating, setRating] = useState<string>("");
+  const navigate = useNavigate();
 
   const addRecipe = async () => {
     const recipe = {
@@ -20,8 +23,6 @@ function AddRecipe() {
       rating,
     };
 
-    console.log(recipe);
-
     await fetch(API_URL, {
       method: "POST",
       headers: {
@@ -29,13 +30,15 @@ function AddRecipe() {
       },
       body: JSON.stringify(recipe),
     });
+    navigate("/recipes");
   };
+
   return (
-    <div className="container">
+    <div className="container mt-4">
       <form className="border rounded shadow p-4">
-        <h2 className="text-warning fw-bold my-3 text-center">Add Recipe</h2>
+        <h2 className="fl-color fw-bold my-3 text-center">Add Recipe</h2>
         <div className="mb-3">
-          <label htmlFor="nameTextBox" className="form-label text-warning fw-bold">
+          <label htmlFor="nameTextBox" className="form-label fl-color fw-bold">
             Name:{" "}
           </label>
           <input
@@ -49,7 +52,10 @@ function AddRecipe() {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="prepTimeTextBox" className="form-label text-warning fw-bold">
+          <label
+            htmlFor="prepTimeTextBox"
+            className="form-label fl-color fw-bold"
+          >
             Prep Time:{" "}
           </label>
 
@@ -64,7 +70,10 @@ function AddRecipe() {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="cookTimeTextBox" className="form-label text-warning fw-bold">
+          <label
+            htmlFor="cookTimeTextBox"
+            className="form-label fl-color fw-bold"
+          >
             Cook Time:{" "}
           </label>
           <input
@@ -78,7 +87,10 @@ function AddRecipe() {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="servingsTextBox" className="form-label text-warning fw-bold">
+          <label
+            htmlFor="servingsTextBox"
+            className="form-label fl-color fw-bold"
+          >
             Servings:{" "}
           </label>
           <input
@@ -92,7 +104,10 @@ function AddRecipe() {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="cuisineTextBox" className="form-label text-warning fw-bold">
+          <label
+            htmlFor="cuisineTextBox"
+            className="form-label fl-color fw-bold"
+          >
             Cuisine:{" "}
           </label>
           <input
@@ -106,7 +121,10 @@ function AddRecipe() {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="ratingTextBox" className="form-label text-warning fw-bold">
+          <label
+            htmlFor="ratingTextBox"
+            className="form-label fl-color fw-bold"
+          >
             Rating:{" "}
           </label>
           <input
@@ -123,7 +141,7 @@ function AddRecipe() {
         <div className="mt-5">
           <button
             type="button"
-            className="btn btn-danger w-100"
+            className="btn btn-success w-100"
             onClick={addRecipe}
           >
             Add Recipe
