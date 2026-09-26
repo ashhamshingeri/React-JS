@@ -10,7 +10,7 @@ app.get("/", (request, response) => {
   response.send("Welcome to the Express JS Student API");
 });
 
-app.get("/about", (request, response) => {
+app.get("/students", (request, response) => {
   response.send("Express JS Student API");
 });
 
